@@ -1,0 +1,43 @@
+# ============================
+# Python cache & bytecode files
+# ============================
+__pycache__/
+*.py[cod]
+*.ipynb_checkpoints/
+
+# ============================
+# Local environment folders
+# ============================
+.env/
+.venv/
+.conda/
+
+# ============================
+# System and editor-specific files
+# ============================
+.DS_Store
+.vscode/
+*.code-workspace
+
+# ============================
+# Log files (not required for versioning)
+# ============================
+logs/
+
+# ============================
+# Model files (large, can be regenerated)
+# ============================
+*.pth
+*.pt
+model/
+
+# ============================
+# Dynamically generated output
+# ============================
+predictions.csv
+
+# ============================
+# Temporary image folders (not needed for reproducibility)
+# ============================
+data/incoming_images/
+data/processed/
