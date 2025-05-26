@@ -109,7 +109,7 @@ image_classifier/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/image_classifier.git
+git clone https://github.com/fessedini/image_classifier.git
 cd image_classifier
 ```
 
