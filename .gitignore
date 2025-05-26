@@ -35,9 +35,3 @@ model/
 # Dynamically generated output
 # ============================
 predictions.csv
-
-# ============================
-# Temporary image folders (not needed for reproducibility)
-# ============================
-data/incoming_images/
-data/processed/

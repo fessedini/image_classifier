@@ -6,6 +6,18 @@ This project automates the classification of returned clothing items using a dee
 
 ---
 
+## Table of Contents
+
+- [Use Case](#use-case)
+- [Dataset](#dataset)
+- [Project Structure](#project-structure)
+- [Installation](#installation)
+- [How it works](#how-it-works)
+- [Usage](#usage)
+- [Cronjob for Automation](#cronjob-for-automation)
+
+---
+
 ## Use Case
 
 As the online platform for sustainable products grows, so does the number of returns. Manual sorting is no longer scalable. This project solves that problem by:
@@ -16,34 +28,21 @@ As the online platform for sustainable products grows, so does the number of ret
 
 ---
 
-## Installation
+## Dataset
 
-### 1. Clone the repository
+This project uses a dataset of clothing item images structured into folders by category and subcategory. The images are required to train and evaluate the model.
 
-```bash
-git clone https://github.com/yourusername/image_classifier.git
-cd image_classifier
-```
+Due to file size limitations, the images in the **`data/train`**, **`data/test`**, and **`data/raw/outfit_items_dataset`** folders are not included in this repository.
 
-### 2. Create and Activate the Conda Environment
+To reproduce the project, please download a similar or identical dataset and organize it as follows:
 
-```bash
-conda create -n image_classifier python=3.11
-conda activate image_classifier
-```
+- **data/raw/outfit_items_dataset** - Original data organized into main categories (*bottomwear*, *footwear*, and *upperwear*) with the corresponding sub categories (*pants* and *shorts*, *heels* and *sneakers*, *jacket* and *shirt*)
+- **data/train** - Training data structured by subcategory (e.g. *0_pants*, *1_shorts*, ...)
+- **data/test** - Testing data structured by subcategory
 
-### 3. Install Dependencies
+This project used the data from an open platform named **Kaggle**. You can download the dataset [**here**](https://www.kaggle.com/datasets/kritanjalijain/outfititems)
 
-```bash
-pip install -r requirements.txt
-```
-
-This will install all required packages, including:
-- **torch and torchvision** – for building and running the deep learning model
-- **flask** – for serving the prediction API
-- **pandas** – for saving batch results as CSV
-- **requests** – for sending image data to the API
-- **pillow** – for image loading and preprocessing (used by app.py)
+**Note:** Make sure to maintain the exact folder structure to ensure correct label mapping via `ImageFolder`.
 
 ---
 
@@ -102,6 +101,37 @@ image_classifier/
 ├── README.md                        # Project documentation
 └── image_classifier.code-workspace  # VS Code workspace file
 ```
+
+---
+
+## Installation
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/yourusername/image_classifier.git
+cd image_classifier
+```
+
+### 2. Create and Activate the Conda Environment
+
+```bash
+conda create -n image_classifier python=3.11
+conda activate image_classifier
+```
+
+### 3. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+This will install all required packages, including:
+- **torch and torchvision** – for building and running the deep learning model
+- **flask** – for serving the prediction API
+- **pandas** – for saving batch results as CSV
+- **requests** – for sending image data to the API
+- **pillow** – for image loading and preprocessing (used by app.py)
 
 ---
 
